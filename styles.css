@@ -1,4 +1,10 @@
-
+body{
+    margin: 0;
+    padding: 0;
+}
+body, body *{
+    box-sizing: border-box;
+}
 .taskbar {
     background: linear-gradient(
       0deg,
@@ -29,4 +35,52 @@
     width: 196px;
     position: relative;
     overflow: hidden;
+  }
+  .start {
+    background: linear-gradient(
+        180deg,
+        rgba(39, 141, 39, 1) 0%,
+        rgba(21, 215, 21, 1) 100%
+      ),
+      linear-gradient(to left, #358335, #358335);
+    border-radius: 0px 25px 25px 0px;
+    padding: 10px 0px 10px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    flex: 1;
+    position: relative;
+    box-shadow: inset 11px 11px 9.1px 0px rgba(83, 202, 83, 1),
+      inset 2px 4px 5px 0px rgba(0, 0, 0, 0.34),
+      inset -5px -5px 9px 0px rgba(0, 0, 0, 0.39),
+      2px 2.5px 2px 0px rgba(43, 114, 227, 1);
+    overflow: hidden;
+  }
+  .wind-img {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 35px;
+    height: 35px;
+    position: relative;
+    object-fit: cover;
+  }
+  .start2 {
+    color: #ffffff;
+    text-align: center;
+    font-family: "SegoeUi-BoldItalic", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    font-style: italic;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.3);
   }
