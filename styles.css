@@ -1,0 +1,32 @@
+
+.taskbar {
+    background: linear-gradient(
+      0deg,
+      rgba(22, 68, 170, 1) 7.999999821186066%,
+      rgba(36, 92, 216, 1) 26.499998569488525%,
+      rgba(36, 92, 216, 1) 40.00000059604645%,
+      rgba(36, 92, 216, 1) 74.00000095367432%,
+      rgba(56, 136, 233, 1) 93.00000071525574%,
+      rgba(109, 178, 255, 1) 100%
+    );
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    height: 51px;
+    position: relative;
+  }
+  .start-frame {
+    padding: 0px 10px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex-shrink: 0;
+    width: 196px;
+    position: relative;
+    overflow: hidden;
+  }
