@@ -67,7 +67,7 @@ body * {
             rgb(25, 100, 25) 0%,
             rgb(20, 156, 20) 100%),
         linear-gradient(to left, #358335, #358335);
-        box-shadow: inset 11px 11px 9.1px 0px rgba(83, 202, 83, 0.596),
+    box-shadow: inset 11px 11px 9.1px 0px rgba(83, 202, 83, 0.596),
         inset 2px 4px 5px 0px rgba(0, 0, 0, 0.34),
         inset -5px -5px 9px 0px rgba(0, 0, 0, 0.39),
         2px 2.5px 2px 0px rgba(43, 114, 227, 1);
@@ -193,6 +193,7 @@ body * {
 }
 
 .taskbar-language {
+    cursor: default;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -203,8 +204,10 @@ body * {
     width: 44px;
     position: relative;
 }
-
-.en {
+.taskbar-language:hover{
+    background-color: #ffffff3f;
+}
+.language {
     color: #ffffff;
     text-align: center;
     font-family: "SegoeUi-Regular", sans-serif;
@@ -220,6 +223,7 @@ body * {
 }
 
 .taskbar-date {
+    cursor:default;
     background: linear-gradient(180deg,
             rgba(13, 155, 239, 1) 0%,
             rgba(13, 155, 239, 1) 83.49999785423279%,
@@ -236,6 +240,13 @@ body * {
     box-shadow: inset -2px -4px 15px 0px rgba(0, 0, 0, 0.25),
         inset 5px 5px 5px 0px rgba(22, 172, 240, 1),
         -2px 0px 1px 0px rgba(0, 0, 0, 0.5);
+}
+
+.taskbar-date:hover {
+    background: linear-gradient(180deg,
+            rgb(8, 102, 156) 0%,
+            rgba(13, 155, 239, 1) 83.49999785423279%,
+            rgb(5, 89, 138) 100%);
 }
 
 .net {
