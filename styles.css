@@ -1,12 +1,25 @@
 body {
     margin: 0;
     padding: 0;
+    background-image: url(assets/images/windows-xp-wallpaper.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
 }
 
 body,
 body * {
     box-sizing: border-box;
 }
+
+/*taskbar*/
 
 .taskbar {
     background: linear-gradient(0deg,
@@ -20,6 +33,7 @@ body * {
     flex-direction: row;
     gap: 10px;
     align-items: center;
+    align-self: stretch;
     justify-content: flex-start;
     height: 51px;
     position: relative;
@@ -204,9 +218,11 @@ body * {
     width: 44px;
     position: relative;
 }
-.taskbar-language:hover{
+
+.taskbar-language:hover {
     background-color: #ffffff3f;
 }
+
 .language {
     color: #ffffff;
     text-align: center;
@@ -223,7 +239,7 @@ body * {
 }
 
 .taskbar-date {
-    cursor:default;
+    cursor: default;
     background: linear-gradient(180deg,
             rgba(13, 155, 239, 1) 0%,
             rgba(13, 155, 239, 1) 83.49999785423279%,
@@ -273,4 +289,52 @@ body * {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+
+/*screen*/
+.screen {
+    padding: 30px;
+    gap: 30px;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.screen-item {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    position: absolute;
+    width: 80px;
+    cursor: pointer;
+    user-select: none; 
+}
+
+.file {
+    width: 32px;
+    height: 32px;
+    margin: 0 auto;
+    background: url('assets/icons/folder2.png') no-repeat center;
+}
+
+.file-name {
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    padding: 4px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5); 
+}
+.screen-item.selected {
+    background: rgba(0, 0, 255, 0.2);
+    outline: 1px dotted #fff;
+}
+
+.screen-item.dragging {
+    opacity: 0.8;
+    z-index: 1000;
+}
+
+.screen-item:hover {
+    background: rgba(0, 0, 255, 0.1);
 }
