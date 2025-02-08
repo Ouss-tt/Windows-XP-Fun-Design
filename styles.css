@@ -26,7 +26,7 @@ body * {
 }
 
 .start-frame {
-    cursor: pointer;
+    cursor: default;
     padding: 0px 10px 0px 0px;
     display: flex;
     flex-direction: row;
@@ -60,6 +60,17 @@ body * {
         inset -5px -5px 9px 0px rgba(0, 0, 0, 0.39),
         2px 2.5px 2px 0px rgba(43, 114, 227, 1);
     overflow: hidden;
+}
+
+.start:hover {
+    background: linear-gradient(180deg,
+            rgb(25, 100, 25) 0%,
+            rgb(20, 156, 20) 100%),
+        linear-gradient(to left, #358335, #358335);
+        box-shadow: inset 11px 11px 9.1px 0px rgba(83, 202, 83, 0.596),
+        inset 2px 4px 5px 0px rgba(0, 0, 0, 0.34),
+        inset -5px -5px 9px 0px rgba(0, 0, 0, 0.39),
+        2px 2.5px 2px 0px rgba(43, 114, 227, 1);
 }
 
 .wind-img {
@@ -174,12 +185,11 @@ body * {
     box-shadow: inset -1px -1px 0px 0px rgba(14, 60, 162, 1),
         inset 1.5px 1.5px 1px 0px rgba(18, 61, 148, 1);
 }
+
 .taskbar-folder:hover {
-  background: linear-gradient(
-    180deg,
-    rgba(107, 160, 246, 0.13) 0%,
-    rgba(98, 144, 218, 0.089) 7.912323623895645%
-  );
+    background: linear-gradient(180deg,
+            rgba(107, 160, 246, 0.13) 0%,
+            rgba(98, 144, 218, 0.089) 7.912323623895645%);
 }
 
 .taskbar-language {
