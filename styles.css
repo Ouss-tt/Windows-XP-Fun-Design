@@ -1,20 +1,21 @@
-body{
+body {
     margin: 0;
     padding: 0;
 }
-body, body *{
+
+body,
+body * {
     box-sizing: border-box;
 }
+
 .taskbar {
-    background: linear-gradient(
-      0deg,
-      rgba(22, 68, 170, 1) 7.999999821186066%,
-      rgba(36, 92, 216, 1) 26.499998569488525%,
-      rgba(36, 92, 216, 1) 40.00000059604645%,
-      rgba(36, 92, 216, 1) 74.00000095367432%,
-      rgba(56, 136, 233, 1) 93.00000071525574%,
-      rgba(109, 178, 255, 1) 100%
-    );
+    background: linear-gradient(0deg,
+            rgba(22, 68, 170, 1) 7.999999821186066%,
+            rgba(36, 92, 216, 1) 26.499998569488525%,
+            rgba(36, 92, 216, 1) 40.00000059604645%,
+            rgba(36, 92, 216, 1) 74.00000095367432%,
+            rgba(56, 136, 233, 1) 93.00000071525574%,
+            rgba(109, 178, 255, 1) 100%);
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -22,8 +23,9 @@ body, body *{
     justify-content: flex-start;
     height: 51px;
     position: relative;
-  }
-  .start-frame {
+}
+
+.start-frame {
     cursor: pointer;
     padding: 0px 10px 0px 0px;
     display: flex;
@@ -36,14 +38,13 @@ body, body *{
     width: 196px;
     position: relative;
     overflow: hidden;
-  }
-  .start {
-    background: linear-gradient(
-        180deg,
-        rgba(39, 141, 39, 1) 0%,
-        rgba(21, 215, 21, 1) 100%
-      ),
-      linear-gradient(to left, #358335, #358335);
+}
+
+.start {
+    background: linear-gradient(180deg,
+            rgba(39, 141, 39, 1) 0%,
+            rgba(21, 215, 21, 1) 100%),
+        linear-gradient(to left, #358335, #358335);
     border-radius: 0px 25px 25px 0px;
     padding: 10px 0px 10px 0px;
     display: flex;
@@ -55,12 +56,13 @@ body, body *{
     flex: 1;
     position: relative;
     box-shadow: inset 11px 11px 9.1px 0px rgba(83, 202, 83, 1),
-      inset 2px 4px 5px 0px rgba(0, 0, 0, 0.34),
-      inset -5px -5px 9px 0px rgba(0, 0, 0, 0.39),
-      2px 2.5px 2px 0px rgba(43, 114, 227, 1);
+        inset 2px 4px 5px 0px rgba(0, 0, 0, 0.34),
+        inset -5px -5px 9px 0px rgba(0, 0, 0, 0.39),
+        2px 2.5px 2px 0px rgba(43, 114, 227, 1);
     overflow: hidden;
-  }
-  .wind-img {
+}
+
+.wind-img {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -71,8 +73,9 @@ body, body *{
     height: 35px;
     position: relative;
     object-fit: cover;
-  }
-  .start2 {
+}
+
+.start2 {
     color: #ffffff;
     text-align: center;
     font-family: "SegoeUi-BoldItalic", sans-serif;
@@ -84,8 +87,9 @@ body, body *{
     align-items: center;
     justify-content: center;
     -webkit-text-stroke: 1px rgba(0, 0, 0, 0.3);
-  }
-  .folders {
+}
+
+.folders {
     padding: 5px 0px 5px 0px;
     display: flex;
     flex-direction: row;
@@ -95,13 +99,12 @@ body, body *{
     align-self: stretch;
     flex: 1;
     position: relative;
-  }
-  .taskbar-folder {
-    background: linear-gradient(
-      180deg,
-      rgba(107, 160, 246, 1) 0%,
-      rgba(57, 128, 244, 1) 7.912323623895645%
-    );
+}
+
+.taskbar-folder {
+    background: linear-gradient(180deg,
+            rgba(107, 160, 246, 1) 0%,
+            rgba(57, 128, 244, 1) 7.912323623895645%);
     border-radius: 4px;
     border-style: solid;
     border-color: #234b9d;
@@ -117,11 +120,12 @@ body, body *{
     max-width: 260px;
     position: relative;
     box-shadow: inset 1.5px 1.5px 1px 0px rgba(255, 255, 255, 0.25),
-      inset 0px 4px 8px 0px rgba(255, 255, 255, 0.15),
-      inset -2px -2px 2px 0px rgba(0, 0, 0, 0.1),
-      2px 0px 2px 0px rgba(0, 0, 0, 0.07);
-  }
-  .folder-img {
+        inset 0px 4px 8px 0px rgba(255, 255, 255, 0.15),
+        inset -2px -2px 2px 0px rgba(0, 0, 0, 0.1),
+        2px 0px 2px 0px rgba(0, 0, 0, 0.07);
+}
+
+.folder-img {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -132,8 +136,9 @@ body, body *{
     height: 21px;
     position: relative;
     object-fit: cover;
-  }
-  .project {
+}
+
+.project {
     color: #ffffff;
     text-align: left;
     font-family: "SegoeUi-Regular", sans-serif;
@@ -145,13 +150,12 @@ body, body *{
     display: flex;
     align-items: center;
     justify-content: flex-start;
-  }
-  .taskbar-folder-selected {
-    background: linear-gradient(
-      91.88deg,
-      rgba(0, 50, 152, 1) 0%,
-      rgba(27, 85, 202, 1) 49.08725321292877%
-    );
+}
+
+.taskbar-folder-selected {
+    background: linear-gradient(91.88deg,
+            rgba(0, 50, 152, 1) 0%,
+            rgba(27, 85, 202, 1) 49.08725321292877%);
     border-radius: 4px;
     border-style: solid;
     border-color: #082154;
@@ -167,5 +171,51 @@ body, body *{
     max-width: 260px;
     position: relative;
     box-shadow: inset -1px -1px 0px 0px rgba(14, 60, 162, 1),
-      inset 1.5px 1.5px 1px 0px rgba(18, 61, 148, 1);
-  }
+        inset 1.5px 1.5px 1px 0px rgba(18, 61, 148, 1);
+}
+
+.taskbar-language {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    flex-shrink: 0;
+    width: 44px;
+    position: relative;
+}
+
+.en {
+    color: #ffffff;
+    text-align: center;
+    font-family: "SegoeUi-Regular", sans-serif;
+    font-size: 19px;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    position: relative;
+    align-self: stretch;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.taskbar-date {
+    background: linear-gradient(180deg,
+            rgba(13, 155, 239, 1) 0%,
+            rgba(13, 155, 239, 1) 83.49999785423279%,
+            rgba(4, 116, 182, 1) 100%);
+    padding: 0px 35px 0px 35px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: inset -2px -4px 15px 0px rgba(0, 0, 0, 0.25),
+        inset 5px 5px 5px 0px rgba(22, 172, 240, 1),
+        -2px 0px 1px 0px rgba(0, 0, 0, 0.5);
+}
