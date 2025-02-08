@@ -102,6 +102,7 @@ body * {
 }
 
 .taskbar-folder {
+    cursor: default;
     background: linear-gradient(180deg,
             rgba(107, 160, 246, 1) 0%,
             rgba(57, 128, 244, 1) 7.912323623895645%);
@@ -172,6 +173,13 @@ body * {
     position: relative;
     box-shadow: inset -1px -1px 0px 0px rgba(14, 60, 162, 1),
         inset 1.5px 1.5px 1px 0px rgba(18, 61, 148, 1);
+}
+.taskbar-folder:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(107, 160, 246, 0.13) 0%,
+    rgba(98, 144, 218, 0.089) 7.912323623895645%
+  );
 }
 
 .taskbar-language {
