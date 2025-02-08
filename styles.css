@@ -24,6 +24,7 @@ body, body *{
     position: relative;
   }
   .start-frame {
+    cursor: pointer;
     padding: 0px 10px 0px 0px;
     display: flex;
     flex-direction: row;
@@ -83,4 +84,65 @@ body, body *{
     align-items: center;
     justify-content: center;
     -webkit-text-stroke: 1px rgba(0, 0, 0, 0.3);
+  }
+  .folders {
+    padding: 5px 0px 5px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex: 1;
+    position: relative;
+  }
+  .taskbar-folder {
+    background: linear-gradient(
+      180deg,
+      rgba(107, 160, 246, 1) 0%,
+      rgba(57, 128, 244, 1) 7.912323623895645%
+    );
+    border-radius: 4px;
+    border-style: solid;
+    border-color: #234b9d;
+    border-width: 0.5px;
+    padding: 10px 10px 10px 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: stretch;
+    flex: 1;
+    max-width: 260px;
+    position: relative;
+    box-shadow: inset 1.5px 1.5px 1px 0px rgba(255, 255, 255, 0.25),
+      inset 0px 4px 8px 0px rgba(255, 255, 255, 0.15),
+      inset -2px -2px 2px 0px rgba(0, 0, 0, 0.1),
+      2px 0px 2px 0px rgba(0, 0, 0, 0.07);
+  }
+  .folder-img {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 21px;
+    position: relative;
+    object-fit: cover;
+  }
+  .project {
+    color: #ffffff;
+    text-align: left;
+    font-family: "SegoeUi-Regular", sans-serif;
+    font-size: 19px;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
