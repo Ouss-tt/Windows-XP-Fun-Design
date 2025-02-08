@@ -13,103 +13,84 @@ document.querySelectorAll(".taskbar-folder").forEach(folder => {
 
 /*Screen Drag and move*/
 document.addEventListener('DOMContentLoaded', () => {
-    const screen = document.querySelector('.screen');
-    const items = document.querySelectorAll('.screen-item');
-    
-    let activeItem = null;
-    let initialX = 0;
-    let initialY = 0;
-    let currentX = 0;
-    let currentY = 0;
-    let xOffset = 0;
-    let yOffset = 0;
+    // Store positions for each item
+    const positions = {
+        item1: { x: 0, y: 0 },
+        item2: { x: 0, y: 0 },
+        item3: { x: 0, y: 0 },
+        item4: { x: 0, y: 0 },
+        item5: { x: 0, y: 0 },
+        item6: { x: 0, y: 0 }
+    };
 
-    // Initialize positions for items (grid-like)
-    items.forEach((item, index) => {
-        // Set initial positions in a grid
-        const row = Math.floor(index / 4); // 4 items per row
-        const col = index % 4;
+    // Set initial positions
+    for (let i = 1; i <= 6; i++) {
+        const item = document.getElementById(`item${i}`);
+        const row = Math.floor((i - 1) / 2); // 2 items per row
+        const col = (i - 1) % 2;
         
         item.style.left = (col * 100 + 20) + 'px';
         item.style.top = (row * 100 + 20) + 'px';
         
-        // Add selection effect
-        item.addEventListener('click', (e) => {
-            items.forEach(i => i.classList.remove('selected'));
-            item.classList.add('selected');
-        });
-    });
-
-    function dragStart(e) {
-        if (e.target.closest('.screen-item')) {
-            activeItem = e.target.closest('.screen-item');
-            
-            // Add dragging class
-            activeItem.classList.add('dragging');
-            
-            if (e.type === "touchstart") {
-                initialX = e.touches[0].clientX - xOffset;
-                initialY = e.touches[0].clientY - yOffset;
-            } else {
-                initialX = e.clientX - xOffset;
-                initialY = e.clientY - yOffset;
-            }
-        }
+        // Initialize drag functionality for each item
+        initDragElement(item);
     }
 
-    function dragEnd(e) {
-        if (activeItem) {
-            // Store final position
-            xOffset = currentX;
-            yOffset = currentY;
-            
-            // Remove dragging class
-            activeItem.classList.remove('dragging');
-            activeItem = null;
-        }
-    }
+    function initDragElement(element) {
+        let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        
+        element.addEventListener('mousedown', dragMouseDown);
 
-    function drag(e) {
-        if (activeItem) {
+        function dragMouseDown(e) {
             e.preventDefault();
-
-            if (e.type === "touchmove") {
-                currentX = e.touches[0].clientX - initialX;
-                currentY = e.touches[0].clientY - initialY;
-            } else {
-                currentX = e.clientX - initialX;
-                currentY = e.clientY - initialY;
-            }
-
-            xOffset = currentX;
-            yOffset = currentY;
-
-            // Keep item within screen bounds
-            const bounds = screen.getBoundingClientRect();
-            const itemBounds = activeItem.getBoundingClientRect();
+            // Get mouse cursor position at startup
+            pos3 = e.clientX;
+            pos4 = e.clientY;
             
-            if (currentX < 0) currentX = 0;
-            if (currentY < 0) currentY = 0;
-            if (currentX > bounds.width - itemBounds.width) 
-                currentX = bounds.width - itemBounds.width;
-            if (currentY > bounds.height - itemBounds.height)
-                currentY = bounds.height - itemBounds.height;
+            // Remove selection from other items
+            document.querySelectorAll('.screen-item').forEach(item => {
+                item.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            
+            // Add event listeners for drag and release
+            document.addEventListener('mousemove', elementDrag);
+            document.addEventListener('mouseup', closeDragElement);
+        }
 
-            setTranslate(currentX, currentY, activeItem);
+        function elementDrag(e) {
+            e.preventDefault();
+            // Calculate new position
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+
+            // Get screen boundaries
+            const screen = document.querySelector('.screen');
+            const screenRect = screen.getBoundingClientRect();
+            const elementRect = element.getBoundingClientRect();
+
+            // Calculate new position
+            let newTop = element.offsetTop - pos2;
+            let newLeft = element.offsetLeft - pos1;
+
+            // Add boundary constraints
+            newTop = Math.max(0, Math.min(newTop, screenRect.height - elementRect.height));
+            newLeft = Math.max(0, Math.min(newLeft, screenRect.width - elementRect.width));
+
+            // Set element's new position
+            element.style.top = newTop + "px";
+            element.style.left = newLeft + "px";
+
+            // Store new position
+            positions[element.id] = { x: newLeft, y: newTop };
+        }
+
+        function closeDragElement() {
+            // Remove event listeners
+            document.removeEventListener('mousemove', elementDrag);
+            document.removeEventListener('mouseup', closeDragElement);
         }
     }
-
-    function setTranslate(xPos, yPos, el) {
-        el.style.left = xPos + 'px';
-        el.style.top = yPos + 'px';
-    }
-
-    // Add event listeners
-    screen.addEventListener("touchstart", dragStart, false);
-    screen.addEventListener("touchend", dragEnd, false);
-    screen.addEventListener("touchmove", drag, false);
-
-    screen.addEventListener("mousedown", dragStart, false);
-    screen.addEventListener("mouseup", dragEnd, false);
-    screen.addEventListener("mousemove", drag, false);
 });
