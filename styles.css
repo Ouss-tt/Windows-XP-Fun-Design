@@ -152,7 +152,7 @@ body * {
     justify-content: flex-start;
 }
 
-.taskbar-folder-selected {
+.taskbar-folder.selected {
     background: linear-gradient(91.88deg,
             rgba(0, 50, 152, 1) 0%,
             rgba(27, 85, 202, 1) 49.08725321292877%);
