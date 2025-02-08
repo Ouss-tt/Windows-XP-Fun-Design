@@ -219,3 +219,29 @@ body * {
         inset 5px 5px 5px 0px rgba(22, 172, 240, 1),
         -2px 0px 1px 0px rgba(0, 0, 0, 0.5);
 }
+
+.net {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 27px;
+    height: 27px;
+    position: relative;
+    object-fit: cover;
+}
+
+.task-date {
+    color: #ffffff;
+    text-align: center;
+    font-family: "SegoeUi-Regular", sans-serif;
+    font-size: 19px;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
